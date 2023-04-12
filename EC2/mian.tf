@@ -66,7 +66,6 @@ resource "aws_security_group" "allow_tls" {
     prefix_list_ids   = []
     security_groups = []
   }
-
   tags = {
     Name = "Secrete_Groups"
   }
