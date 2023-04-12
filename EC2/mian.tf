@@ -68,6 +68,6 @@ resource "aws_security_group" "allow_tls" {
   }
 
   tags = {
-    Name = "Secrete_Group"
+    Name = "Secrete_Groups"
   }
 }
