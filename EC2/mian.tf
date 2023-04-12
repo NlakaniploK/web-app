@@ -55,7 +55,6 @@ resource "aws_security_group" "allow_tls" {
     prefix_list_ids   = []
     security_groups = []
   }
-
   egress {
     description      = "Allow all outgoing traffic"
     from_port        = 0
