@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 resource "aws_instance" "dotnet-web"{
-    ami = "ami-0fa1de1d60de6a97e"
+    ami = "ami-09c5c62bac0d0634e"
     key_name = "ubunt-keypair"
     instance_type = "t2.micro"
     user_data = file("script.sh")
