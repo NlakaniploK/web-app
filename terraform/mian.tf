@@ -10,7 +10,7 @@ resource "aws_instance" "dotnet-web"{
     vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
     tags = {
-      "Name" = "terraform-instance"
+      "Name" = "terraform-deploy"
     }
 }
 resource "aws_security_group" "allow_tls" {
