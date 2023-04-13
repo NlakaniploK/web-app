@@ -1,4 +1,4 @@
-name: .NET
+name: Main push
 
 on: [workflow_dispatch]
 
