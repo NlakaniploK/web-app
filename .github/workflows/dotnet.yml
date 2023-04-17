@@ -39,14 +39,8 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotnet-app:latest
 
     - name: Setup Terraform
-      run: |
-        sh "rm -rf terraform/"
-        wget https://releases.hashicorp.com/terraform/1.2.0/terraform_1.2.0_linux_amd64.zip
-        unzip -f terraform_1.2.0_linux_amd64.zip
-        Archive:  terraform_1.2.0_linux_amd64.zip
-        inflating: terraform
-        mv terraform ../Documents/terraform/
-        export PATH=$PATH:/home/terraform/Documents/terraform:$PATH
+      uses: hashicorp/setup-terraform@v1
+      
         
     - name: Run Terraform
       run: |
