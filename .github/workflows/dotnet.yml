@@ -40,8 +40,9 @@ jobs:
 
     - name: Setup Terraform
       run: |
+        sh "rm -rf terraform/"
         wget https://releases.hashicorp.com/terraform/1.2.0/terraform_1.2.0_linux_amd64.zip
-        unzip -o terraform_1.2.0_linux_amd64.zip
+        unzip -f terraform_1.2.0_linux_amd64.zip
         Archive:  terraform_1.2.0_linux_amd64.zip
         inflating: terraform
         mv terraform ../Documents/terraform/
