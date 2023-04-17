@@ -2,7 +2,7 @@ provider "aws" {
     region = "us-west-1"
 }
 
-resource "aws_instance" "dotnet-web"{
+resource "aws_instance" "dotnet-webb"{
     ami = "ami-09c5c62bac0d0634e"
     key_name = "ubunt-keypair"
     instance_type = "t2.micro"
@@ -10,7 +10,7 @@ resource "aws_instance" "dotnet-web"{
     vpc_security_group_ids = [aws_security_group.allow_tls.id]
 
     tags = {
-      "Name" = "terraform-deploy"
+      "Name" = "terraform-deploying"
     }
 }
 resource "aws_security_group" "allow_tls" {
