@@ -42,7 +42,7 @@ jobs:
       # uses: hashicorp/setup-terraform
       run: |
         wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip
-        unzip -o /path/to/archive.zip
+        unzip -o terraform_1.0.8_linux_amd64.zip
         sudo mv terraform /usr/local/bin/
 
     - name: Login to AWS
