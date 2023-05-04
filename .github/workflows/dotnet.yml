@@ -39,11 +39,21 @@ jobs:
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/dotnet-app:latest
 
     - name: Setup Terraform
-      uses: hashicorp/setup-terraform@v1
-      
-        
+      # uses: hashicorp/setup-terraform
+      run: |
+        wget https://releases.hashicorp.com/terraform/1.0.8/terraform_1.0.8_linux_amd64.zip
+        unzip terraform_1.0.8_linux_amd64.zip
+        sudo mv terraform /usr/local/bin/
+
+    - name: Login to AWS
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-west-1
+
     - name: Run Terraform
       run: |
-        terraform destroy
+        working-directory: terraform
         terraform init
         terraform apply -auto-approve

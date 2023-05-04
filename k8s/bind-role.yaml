@@ -6,7 +6,7 @@ metadata:
 subjects:
 - kind: ServiceAccount
   name: k8sadmin
-  namespace: mynamespace
+  namespace: kubernetes-dashboard
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: Role
